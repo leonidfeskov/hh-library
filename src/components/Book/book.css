@@ -1,0 +1,137 @@
+.book {
+    box-sizing: border-box;
+    width: 180px;
+    height: 220px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 10px 30px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.book:hover .book__cover_front {
+    transform: rotateY(-148deg);
+}
+
+.book__cover, .book__page {
+    box-sizing: border-box;
+    background-color: #2196F3;
+    border: 1px solid #333;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 100%;
+    transform-style: preserve-3d;
+}
+
+.book__cover_front {
+    transform: rotateY(-32deg);
+    transition: transform 0.5s ease;
+}
+
+.book__cover-side-one, .book__cover-side-two {
+    background-color: #2196F3;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: #fff;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.book__cover-side-one {
+    border-left: 10px solid #0D47A1;
+}
+
+.book__cover-side-two {
+    background-color: #f2f2f2;
+    border: 5px solid #2196F3;
+    transform: rotateY(180deg);
+    color: #333;
+}
+
+.book__page {
+    background: #fff;
+    border-color: #BDBDBD;
+    transition-property: transform;
+    transition-timing-function: ease;
+    padding: 10px;
+    font-size: 0.875rem;
+}
+
+.book__cover_back {transform: rotateY(-16deg);}
+.book__page_1 {transform: rotateY(-20deg);}
+.book__page_2 {transform: rotateY(-22deg);}
+.book__page_3 {transform: rotateY(-24deg);}
+.book__page_4 {transform: rotateY(-26deg);}
+.book__page_5 {transform: rotateY(-28deg);}
+
+.book__title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.book__title_front {
+    text-shadow: 1px 1px 0 #000;
+}
+
+.book__title-link {
+    color: inherit;
+}
+
+.book__authors, .book__date {
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+}
+
+.book__author {
+    display: inline;
+    margin-right: 10px;
+}
+
+.book__author:last-child {
+    margin-right: 0;
+}
+
+.book__tags {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+}
+
+.book__tag {
+    background-color: gray;
+    color: #fff;
+    box-sizing: border-box;
+    width: 120px;
+    height: 20px;
+    padding: 0 5px 0 15px;
+    font-size: 0.875rem;
+    line-height: 20px;
+    text-align: center;
+    position: relative;
+    margin-top: 2px;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.book__tag:after {
+    content: '';
+    border: 10px solid transparent;
+    border-left-color: #2196F3;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.book__actions {
+    margin-top: 20px;
+    text-align: center;
+}

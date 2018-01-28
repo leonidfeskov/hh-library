@@ -1,0 +1,9 @@
+.user {
+    margin: 20px 0;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.user__name {
+    margin-bottom: 5px;
+}
