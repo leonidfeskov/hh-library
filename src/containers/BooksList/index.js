@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Book from '../../components/Book';
-import {fetchBooksList} from '../../actions';
+import {fetchBooksList} from '../../reducers/booksList';
 
 
 class BooksList extends Component {
@@ -17,17 +17,7 @@ class BooksList extends Component {
                 {!booksList.length ? (
                     'Книги не найдены'
                 ) : (
-                    booksList.map(book => {
-                        return <Book key={book.id}
-                                     title={book.title}
-                                     description={book.description}
-                                     year={book.year}
-                                     link={book.link}
-                                     authors={book.authors}
-                                     tags={book.tags}
-                                     countTotal={book.countTotal}
-                                     countCurrent={book.countCurrent}/>
-                    })
+                    booksList.map(book => <Book key={book.id} {...book}/>)
                 )}
             </div>
         )
