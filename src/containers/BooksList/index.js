@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Book from '../Book';
+import Spinner from '../../components/Spinner';
 import {fetchBooksList} from '../../reducers/booksList';
 
 
@@ -9,7 +10,7 @@ class BooksList extends Component {
         if (books.length) {
             return books.map(book => <Book key={book.id} {...book} />)
         }
-        return 'Книги не найдены';
+        return <Spinner />
     };
 
     componentDidMount() {
