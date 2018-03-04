@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import axios from 'axios';
-import './index.css';
-import configureStore from './configureStore';
-import App from './components/App';
+import configureStore from './config/store';
 
-axios.defaults.baseURL = 'http://127.0.0.1:3000/api';
+import './config/axios';
+
+import App from './containers/App';
+import './index.css';
 
 
 let store = configureStore();
