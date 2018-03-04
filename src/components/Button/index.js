@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
-import './button.css';
+import React  from 'react';
+import classnames from 'classnames';
 
 
-export default function Book({children}) {
-    return <button type="button" className="button">{children}</button>
+export default function Button({kind, type, onClick, children}) {
+    return (
+        <button className={classnames('btn', {
+            [`btn-${kind}`]: kind
+        })}
+                type={type ? type : 'button'}
+                onClick={onClick}>
+            {children}
+        </button>
+    )
 }
 

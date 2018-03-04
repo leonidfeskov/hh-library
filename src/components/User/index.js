@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PseudoLink from '../PseudoLink';
 import './user.css';
 
 
@@ -7,7 +8,7 @@ export default class User extends Component {
         return(
             <div className="user">
                 <div className="user__name">Незнакомец</div>
-                <span className="pseudo-link">Войти</span>
+                <PseudoLink>Войти</PseudoLink>
             </div>
         )
     }
