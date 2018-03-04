@@ -26,7 +26,7 @@ class Menu extends Component {
 
 export default connect(
     null,
-    dispatch => ({
-        showPopup: (popupName) => dispatch(showPopup(popupName))
-    })
+    {
+        showPopup,
+    }
 )(Menu)

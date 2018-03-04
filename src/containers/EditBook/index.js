@@ -28,8 +28,8 @@ export default connect(
         booksList: state.booksList,
         editedBookId: state.editedBookId,
     }),
-    dispatch => ({
-        editBook: (data, id) => dispatch(editBook(data, id)),
-    })
+    {
+        editBook,
+    }
 )(EditBook);
 

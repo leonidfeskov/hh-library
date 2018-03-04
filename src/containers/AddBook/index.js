@@ -27,8 +27,8 @@ class AddBook extends Component {
 
 export default connect(
     null,
-    dispatch => ({
-        addBook: (data) => dispatch(addBook(data)),
-    })
+    {
+        addBook,
+    }
 )(AddBook);
 

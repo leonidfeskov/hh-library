@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './book.css';
 import Button from '../../components/Button/index';
 import { POPUP_EDIT_BOOK, showPopup } from '../../reducers/popup';
+import { takeBook } from '../../reducers/booksList';
 import { setEditedBookId } from '../../reducers/editedBookId';
 
 
@@ -20,8 +21,12 @@ class Book extends Component {
         this.props.showPopup(POPUP_EDIT_BOOK);
     };
 
+    handlerTakeBook = () => {
+        this.props.takeBook(this.props.id);
+    };
+
     render() {
-        const {title, description, year, link, authors, tags} = this.props;
+        const {title, description, year, link, authors, tags, readers} = this.props;
 
         return (
             <div className="book" onClick={this.bookClick} onMouseLeave={this.bookMouseLeave}>
@@ -57,6 +62,9 @@ class Book extends Component {
                                 )
                             })}
                         </ul>
+                        {readers.map(reader => {
+                            return reader.id;
+                        })}
                     </div>
                     <div className="book__cover-side-two">
                         <div className="book__title">
@@ -68,11 +76,16 @@ class Book extends Component {
                         </div>
                         <div className="book__actions">
                             <div className="mt-1">
-                                <Button kind="primary">Взять</Button>
+                                <Button kind="primary"
+                                        onClick={this.handlerTakeBook}>
+                                    Взять
+                                </Button>
                             </div>
                             <div className="mt-1">
                                 <Button kind="secondary"
-                                        onClick={this.showPopupEditBook}>Редактировать</Button>
+                                        onClick={this.showPopupEditBook}>
+                                    Редактировать
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -84,8 +97,9 @@ class Book extends Component {
 
 export default connect(
     null,
-    dispatch => ({
-        showPopup: (popupName) => dispatch(showPopup(popupName)),
-        setEditedBookId: (id) => dispatch(setEditedBookId(id)),
-    })
+    {
+        showPopup,
+        setEditedBookId,
+        takeBook,
+    }
 )(Book);
