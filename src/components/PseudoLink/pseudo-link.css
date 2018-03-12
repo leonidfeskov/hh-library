@@ -1,0 +1,9 @@
+.pseudo-link {
+    color: #2196F3;
+    border-bottom: 1px dotted;
+    cursor: pointer;
+}
+
+.pseudo-link:hover {
+    border-bottom-color: transparent;
+}
